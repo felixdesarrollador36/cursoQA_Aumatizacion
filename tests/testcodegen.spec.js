@@ -7,10 +7,12 @@ test('test', async ({ page }, testInfo) => {
 
   await page.goto('https://ligawocdominicana.com/login');
 
+  /// pruebas
   // Captura después de navegar
   const despuesNavegar = await page.screenshot();
   await testInfo.attach('despues-de-navegar', { body: despuesNavegar, contentType: 'image/png' });
 
+  // Hacer click en el div
   await page.locator('div').nth(1).click();
 
   // Captura después de hacer click en el div
